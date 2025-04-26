@@ -3,69 +3,120 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+  }
   
-html, body {
+  html, body {
     height: 100%;
     width: 100%;
-}
+  }
   
-.container {
+  .container {
     position: absolute;
     inset: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
-    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #7f7fd5, #86a8e7, #91eae4); /* 🎨 degradado más alegre */
+    font-family: 'Outfit', 'Helvetica Neue', sans-serif;
     text-align: center;
-}
+    padding: 20px;
+    overflow: hidden;
+  }
   
-h1 {
-    font-size: 3rem;
-}
+  /* Hero title */
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #ffffff; /* Blanco puro */
+    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+  }
   
-h2 {
-    font-size: 1.5rem;
-    margin-top: 10px;
-    color: #555;
-}
-
-@keyframes typing {
+  /* Subtitle (cargo) */
+  h2 {
+    font-size: 1.8rem;
+    margin-top: 15px;
+    font-weight: 400;
+    color: #ffffff;
+    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Typing animation */
+  @keyframes typing {
     from { width: 0 }
     to { width: 35ch }
-}  
-
-@keyframes blink-caret {
+  }
+  
+  @keyframes blink-caret {
     50% { border-color: transparent }
-}
-
-.typing {
+  }
+  
+  .typing {
     width: 0;
     animation: typing 3s steps(35, end) forwards, blink-caret 0.75s step-end infinite;
     overflow: hidden;
     white-space: nowrap;
-    border-right: 2px solid #333;
-    font-size: 1.5rem;
-    color: #333;
+    border-right: 2px solid #ffffff; /* cursor blanco */
+    font-size: 1.8rem;
+    color: #ffffff;
     max-width: 35ch;
-  }  
-
-.social {
-    margin-top: 20px;
-
-    a {
-        display: inline-block;
-        transition: transform 0.2s ease-in-out;
-
-        &:hover {
-        transform: scale(1.1);
-        }
-
-        img {
-        width: 32px;
-        height: 32px;
-        }
+    margin-top: 15px;
+    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Social section */
+  .social {
+    margin-top: 30px;
+    opacity: 0;
+    animation: fadeInSocial 1s ease forwards;
+    animation-delay: 3.5s;
+  }
+  
+  @keyframes fadeInSocial {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
     }
-} 
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .social a {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+  
+    &:hover {
+      transform: scale(1.1);
+    }
+  
+    img {
+      width: 36px;
+      height: 36px;
+      filter: brightness(0) invert(1); /* icono blanco sobre fondo vibrante */
+    }
+  }
+  
+  /* Responsive Mobile */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+  
+    h2 {
+      font-size: 1.2rem;
+    }
+  
+    .typing {
+      font-size: 1.2rem;
+      max-width: 35ch;
+      animation: typing 3s steps(35, end) forwards, blink-caret 0.75s step-end infinite;
+    }
+  
+    .social img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  
