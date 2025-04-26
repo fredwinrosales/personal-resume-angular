@@ -1,0 +1,71 @@
+/* Reset para eliminar bordes y márgenes blancos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+html, body {
+    height: 100%;
+    width: 100%;
+}
+  
+.container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+  
+h1 {
+    font-size: 3rem;
+}
+  
+h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #555;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 35ch }
+}  
+
+@keyframes blink-caret {
+    50% { border-color: transparent }
+}
+
+.typing {
+    width: 0;
+    animation: typing 3s steps(35, end) forwards, blink-caret 0.75s step-end infinite;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #333;
+    font-size: 1.5rem;
+    color: #333;
+    max-width: 35ch;
+  }  
+
+.social {
+    margin-top: 20px;
+
+    a {
+        display: inline-block;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+        transform: scale(1.1);
+        }
+
+        img {
+        width: 32px;
+        height: 32px;
+        }
+    }
+} 
