@@ -44,7 +44,7 @@
   /* Typing animation */
   @keyframes typing {
     from { width: 0 }
-    to { width: 35ch }
+    to { width: 28ch; }
   }
   
   @keyframes blink-caret {
@@ -53,13 +53,13 @@
   
   .typing {
     width: 0;
-    animation: typing 3s steps(35, end) forwards, blink-caret 0.75s step-end infinite;
+    animation: typing 3s steps(28, end) forwards, blink-caret 0.75s step-end infinite;
     overflow: hidden;
     white-space: nowrap;
-    border-right: 2px solid #ffffff; /* cursor blanco */
+    border-right: 2px solid #ffffff;
     font-size: 1.8rem;
     color: #ffffff;
-    max-width: 35ch;
+    max-width: 28ch;
     margin-top: 15px;
     text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
   }
